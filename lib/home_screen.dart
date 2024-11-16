@@ -9,10 +9,10 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Bienvenido"),
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
+          children: <Widget>[
             Text(
               'Inicio de sesión exitoso',
               style: TextStyle(fontSize: 24),

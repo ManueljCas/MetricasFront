@@ -18,6 +18,9 @@ class LoginScreenState extends State<LoginScreen> {
   Future<void> login() async {
     try {
       var result = await apiService.login(emailController.text, passwordController.text);
+
+      if (!mounted) return; // Verifica si el widget sigue montado antes de usar el contexto
+
       if (result) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text("Inicio de sesión exitoso")),
@@ -32,7 +35,7 @@ class LoginScreenState extends State<LoginScreen> {
         );
       }
     } catch (e) {
-      print(e);
+      debugPrint('Error: $e');
     }
   }
 
